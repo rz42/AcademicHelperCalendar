@@ -1,15 +1,15 @@
-15-112 Term Project
-Calendar Webapp
+Academic Helper Calendar
+============
 
-###Project Description
+### Project Description
 This project is a web app created using Django, a free and open source web application framework written in Python. It stores the user information after registration in its database and generates personal calendars that are created based on HTMLCalendar module in Python. The home page of the web app displays the personal calendar for the user after he or she logs in. The personal calendar is in a monthly view, with title and start time of each event displayed in the corresponding table. The user can click on the title of the event to edit it or delete it. The home page also embeds the course content page for 15-112 and a collaborative real-time online text-editor, with which user can take notes and save it while studying the course material.
 
-##Requirements
-Python 3.6
-Django (1.11.7+)
+## Requirements
+* Python 3.6
+* Django (1.11.7+)
 
-##Installation
-Virtual environment
+## Installation
+# Virtual environment
 Before installing requirements for this project, consider installing a virtual environment. Virtualenv will isolate your Python/Django setup on a per-project basis. Open terminal and type:
 $ pip install virtualenv
 Create a new virtual environment by entering:
@@ -21,7 +21,7 @@ You should see (venv) $ at your prompt, letting you know that you're running und
 $ deactivate
 to stop using the virtualenv
 
-##Installing Django
+## Installing Django
 Before installing Django, make sure that you have the latest version of pip. 
 Then, run 
 $ python3 pip install django 
