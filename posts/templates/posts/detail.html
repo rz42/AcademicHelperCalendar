@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+	<h3 class="text-center">Event Detail</h3>
+	<hr>
+	<h2>{{ event.title }}
+	</h2>
+	<h4>scheduled by: {{ event.author }}
+		<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+		</h4>
+	{% if error %}
+	<center>
+	{{ error }}</center>
+	{% endif %}
+<hr>
+<form id="edit" method="POST" action="{% url 'posts:detail' event.id %}">
+	{% csrf_token %}
+	<center><h5>Title:</h5>
+	<input type="text" name="title" value="{{ event.title }}" />
+	<br/>
+	<br/>
+	<h5>Day:</h5>
+	<input type="text" name="day" value="{{ event.day }}"/>
+	<br/>
+	<br/>
+	<h5>Start Time:</h5>
+	<input type="text" name="start_time" value="{{ event.start_time }}"/>
+	<br/>
+	<br/>
+	<h5>End Time:</h5>
+	<input type="text" name="end_time" value="{{ event.end_time }}"/>
+	<br/>
+	<br/>
+	<h5>Notes:</h5>
+	<input type="text" name="notes" value="{{ event.notes }}"/>
+	<br/>
+	<br/>
+	<input class="btn btn-sm btn-info" type="submit" value="Save Event">
+</center>
+</form>
+	<h4>
+		&nbsp; <a href="/posts/delete/{{ event.id }}" class="btn btn-sm btn-danger">Delete Event</a>
+	</h4>
+
+</center>
+{% endblock %}

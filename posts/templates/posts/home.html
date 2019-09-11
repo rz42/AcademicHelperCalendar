@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+<br/>
+{% block content %}
+  <div id="content-main">
+          <ul class="object-tools">
+                <a href={{ previous_month }} class="btn btn-sm btn-default pull-left">
+                    Previous Month
+                </a>
+                <a href={{ next_month }} class="btn btn-sm btn-default pull-right">
+                    Next Month
+                </a>
+        </ul>
+		<h2 class="text-center">{{ username }}'s calendar</h2>
+		<hr>
+        <center><a href="{% url 'posts:create' %}" class="btn btn-warning"> Create Event</a></center>
+
+        <center><p>{{ calendar }}</p></center>
+
+<br>
+<hr>
+<!-- 15-112 website embedded is from Carnegie Mellon 15-112 course material -->
+
+<!-- the text editor embedded is from writeurl.com, which is a collaborative real-time online text editor.
+WriteURL is owned by Amber Biosciences AB -->
+
+<iframe src="http://www.cs.cmu.edu/~112/schedule.html" width=600px; height=400px;></iframe> 
+<iframe src="http://www.writeurl.com/new" width=530px; height=400px;></iframe>
+
+<br>
+<br>
+{% endblock %}

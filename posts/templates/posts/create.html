@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-center">Create Event</h1>
+{% if error %}
+<center>
+{{ error }}</center>
+{% endif %}
+<hr>
+<form method="POST" action="{% url 'posts:create' %}">
+	{% csrf_token %}
+	<center><h5>Title:</h5>
+	<input type="text" name="title"/>
+	<br/>
+	<br/>
+	<h5>Day:</h5>
+	<input type="text" name="day" value="YYYY-MM-DD" />
+	<br/>
+	<br/>
+	<h5>Start Time:</h5>
+	<input type="text" name="start_time" value="HH:MM:SS" />
+	<br/>
+	<br/>
+	<h5>End Time:</h5>
+	<input type="text" name="end_time" value="HH:MM:SS" />
+	<br/>
+	<br/>
+	<h5>Notes:</h5>
+	<input type="text" name="notes"/>
+	<br/>
+	<br/>
+	<input class="btn btn-info" type="submit" value="Create Event">
+</center>
+</form>
+{% endblock %}

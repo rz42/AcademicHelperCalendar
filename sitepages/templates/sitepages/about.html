@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <center><h1>About this project</h1></center>
+    <h2>What is this project?</h2>
+    <p>
+	This project is a web app created using Django, a free and open source web application framework written in Python. It stores the user information after registration in its database and generates personal calendars that are created based on HTMLCalendar module in Python. The home page of the web app displays the personal calendar for the user after he or she logs in. The personal calendar is in a monthly view, with title and start time of each event displayed in the corresponding table. The user can click on the title of the event to edit it or delete it. The home page also embeds the course content page for 15-112 and a collaborative real-time online text-editor, with which user can take notes and save it while studying the course material.
+    </p>
+	<hr/>
+    <h2>Requirements</h2>
+    <p>
+	<li>Python 3.6</li>
+	<li>Django (1.11.7+)</li>
+	<br/>
+		{% load static %}
+	<img src="{% static 'posts/thinkcode.jpg' %}" class="img-responsive center-block"/>
+
+<div class="container">
+
+{% endblock %}

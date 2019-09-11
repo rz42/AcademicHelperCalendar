@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+<h1>All Events by <b><i>{{ user }}</i></b> </h1>
+<a href="{% url 'posts:create' %}" class="btn btn-lg btn-info"> Create New Event
+ </a>
+ <hr>
+{% for event in events.all %}
+<h3><a href="{% url 'posts:detail' event.id %}">{{ event.title }}</a></h3>
+<h4>Date <span class="glyphicon glyphicon-time text-center" aria-hidden="true"></span></h4>
+{{ event.day }}
+<h4>Start Time:</h4>
+ {{ event.start_time }}
+<h4>End Time:</h4>
+{{ event.end_time }}
+<h4>Notes:</h4>
+{{ event.notes }}
+<br/>
+
+{% endfor %}
+</center>
+{% endblock %}

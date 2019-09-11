@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="container">
+	    <h1 class="text-center">
+	    	<span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> Hello, New Student!
+	    </h1>
+		<br/>
+
+		{% load static %}
+		<img src="{% static 'posts/headersignup.jpg' %}" class="img-responsive center-block" style="max-height:300px;"/>
+		<h2>
+			Start your journey to the academic helper calendar for 15112 here.
+		</h2>
+		<hr/>
+		<h4>Please fill in all the following information.</h4>
+		{% if error %}
+		{{ error }}
+		<br/>
+		<br/>
+		{% endif %}
+		<form method="POST" action="{% url 'account:signup' %}">
+			{% csrf_token %}
+
+			<h5>
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Username:
+			</h5>
+			<input type="text" name="username"/>
+			<br/>
+			<h5>Password:</h5>
+			<input type="password" name="pw1"/>
+			<br/>
+			<h5>Confirm Password:</h5>
+			<input type="password" name="pw2"/>
+			<br/>
+			<br/>
+			<input class="btn btn-success" type="submit" value="Submit">
+		</form>
+	</div>
+{% endblock %}
+
