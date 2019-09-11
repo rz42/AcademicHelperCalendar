@@ -9,7 +9,7 @@ This project is a web app created using Django, a free and open source web appli
 * Django (1.11.7+)
 
 ## Installation
-# Virtual environment
+#### Virtual environment
 Before installing requirements for this project, consider installing a virtual environment. Virtualenv will isolate your Python/Django setup on a per-project basis. Open terminal and type:
 $ pip install virtualenv
 Create a new virtual environment by entering:
@@ -21,7 +21,7 @@ You should see (venv) $ at your prompt, letting you know that you're running und
 $ deactivate
 to stop using the virtualenv
 
-## Installing Django
+#### Django
 Before installing Django, make sure that you have the latest version of pip. 
 Then, run 
 $ python3 pip install django 
